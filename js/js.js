@@ -78,13 +78,13 @@ let lastKey = ''
 
 
 const map = [
-    ['-', '-', '-', '-', '-', '-', '-'],
-    ['|', ' ', ' ', ' ', ' ', ' ', '-'],
-    ['|', ' ', '-', ' ', '-', ' ', '-'],
-    ['|', ' ', ' ', ' ', ' ', ' ', '-'],
-    ['|', ' ', '-', ' ', '-', ' ', '-'],
-    ['-', ' ', ' ', ' ', ' ', ' ', '-'],
-    ['-', '-', '-', '-', '-', '-', '-']
+    ['c', '-', '-', '-', '-', '-', '8'],
+    ['|', ' ', ' ', ' ', ' ', ' ', '|'],
+    ['|', ' ', '-', ' ', '-', ' ', '|'],
+    ['|', ' ', ' ', ' ', ' ', ' ', '|'],
+    ['|', ' ', '-', ' ', '-', ' ', '|'],
+    ['|', ' ', ' ', ' ', ' ', ' ', '|'],
+    ['<', '-', '-', '-', '-', '-', '>']
 ]
 
 function createImage(src) {
@@ -104,7 +104,7 @@ map.forEach((row, i) => {
                             x: Boundary.width * j,
                             y: Boundary.height * i
                         },
-                        image: createImage('.img/pipeHorizontal.png')
+                        image: createImage('img/pipeHorizontal.png')
                     })
                     )
                 break;
@@ -115,7 +115,106 @@ map.forEach((row, i) => {
                             x: Boundary.width * j,
                             y: Boundary.height * i
                         },
-                        image: createImage('.img/pipeVertical.png')
+                        image: createImage('img/pipeVertical.png')
+                    })
+                    )
+                break;
+                case 'c':
+                boundaries.push(
+                    new Boundary({
+                        position: {
+                            x: Boundary.width * j,
+                            y: Boundary.height * i
+                        },
+                        image: createImage('img/pipeCorner1.png')
+                    })
+                    )
+                break;
+                case '<':
+                boundaries.push(
+                    new Boundary({
+                        position: {
+                            x: Boundary.width * j,
+                            y: Boundary.height * i
+                        },
+                        image: createImage('img/pipeCorner4.png')
+                    })
+                    )
+                break;
+                case '8':
+                boundaries.push(
+                    new Boundary({
+                        position: {
+                            x: Boundary.width * j,
+                            y: Boundary.height * i
+                        },
+                        image: createImage('img/pipeCorner2.png')
+                    })
+                    )
+                break;
+                case '>':
+                boundaries.push(
+                    new Boundary({
+                        position: {
+                            x: Boundary.width * j,
+                            y: Boundary.height * i
+                        },
+                        image: createImage('img/pipeCorner3.png')
+                    })
+                    )
+                break;
+                case '0':
+                boundaries.push(
+                    new Boundary({
+                        position: {
+                            x: Boundary.width * j,
+                            y: Boundary.height * i
+                        },
+                        image: createImage('img/block.png')
+                    })
+                    )
+                break;
+                case 'u':
+                boundaries.push(
+                    new Boundary({
+                        position: {
+                            x: Boundary.width * j,
+                            y: Boundary.height * i
+                        },
+                        image: createImage('img/capBottom.png')
+                    })
+                    )
+                break;
+                case 'p':
+                boundaries.push(
+                    new Boundary({
+                        position: {
+                            x: Boundary.width * j,
+                            y: Boundary.height * i
+                        },
+                        image: createImage('img/capLeft.png')
+                    })
+                    )
+                break;
+                case 'q':
+                boundaries.push(
+                    new Boundary({
+                        position: {
+                            x: Boundary.width * j,
+                            y: Boundary.height * i
+                        },
+                        image: createImage('img/capRight.png')
+                    })
+                    )
+                break;
+                case 'n':
+                boundaries.push(
+                    new Boundary({
+                        position: {
+                            x: Boundary.width * j,
+                            y: Boundary.height * i
+                        },
+                        image: createImage('img/capTop.png')
                     })
                     )
                 break;
